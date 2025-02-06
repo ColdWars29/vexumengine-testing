@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Results</title>
+  <style>
+    /* Basic styling */
+    .result-item {
+      border-bottom: 1px solid #ccc;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Results</h1>
+  <div id="resultsContainer">
+    <% if (data && data.length) { %>
+      <% data.forEach(item => { %>
+        <div class="result-item">
+          <h2><%= item.title %></h2>
+          <p><%= item.description %></p>
+        </div>
+      <% }) %>
+    <% } else { %>
+      <p>No data available.</p>
+    <% } %>
+  </div>
+</body>
+</html>

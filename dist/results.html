@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Results Page</title>
+  <style>
+    /* Basic styling */
+    #resultsContainer {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Results</h1>
+  <div id="resultsContainer">
+    <!-- Data will be rendered here -->
+  </div>
+
+  <script>
+    // Example: Fetch data from your proxy endpoint.
+    // Adjust the URL or parameters as needed.
+    fetch('/proxy?url=' + encodeURIComponent('https://api.example.com/data'))
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('resultsContainer').innerHTML = data;
+      })
+      .catch(err => {
+        document.getElementById('resultsContainer').innerHTML = 'Error loading data.';
+        console.error(err);
+      });
+  </script>
+</body>
+</html>
